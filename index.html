@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Record Collection</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&family=Space+Mono&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <nav>
+    <a href="#" class="nav-logo">Record Collection</a>
+    <ul class="nav-links">
+      <li><a href="#featured">Picks</a></li>
+      <li><a href="#catalog">Catalog</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Personal Archive · Since 2010</p>
+      <h1 class="hero-title">
+        Music<br>pressed<br>into <em>vinyl.</em>
+      </h1>
+      <p class="hero-desc">
+        一枚ずつ手に入れてきたレコードたち。その溝に刻まれた音楽は、どんなデジタル音源よりも豊かに語りかけてくる。
+      </p>
+      <a href="#catalog" class="hero-cta">
+        コレクションを見る
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </a>
+    </div>
+
+    <div class="hero-visual">
+      <div class="vinyl-wrap">
+        <svg class="vinyl-record" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="170" cy="170" r="170" fill="#1C1917" />
+          <circle cx="170" cy="170" r="158" stroke="#2C2825" stroke-width="0.6" />
+          <circle cx="170" cy="170" r="150" stroke="#2C2825" stroke-width="0.6" />
+          <circle cx="170" cy="170" r="142" stroke="#2C2825" stroke-width="0.6" />
+          <circle cx="170" cy="170" r="134" stroke="#2C2825" stroke-width="0.6" />
+          <circle cx="170" cy="170" r="126" stroke="#2C2825" stroke-width="0.6" />
+          <circle cx="170" cy="170" r="118" stroke="#2C2825" stroke-width="0.6" />
+          <circle cx="170" cy="170" r="110" stroke="#2C2825" stroke-width="0.6" />
+          <circle cx="170" cy="170" r="102" stroke="#2C2825" stroke-width="0.6" />
+          <circle cx="170" cy="170" r="94" stroke="#2C2825" stroke-width="0.6" />
+          <circle cx="170" cy="170" r="86" stroke="#2C2825" stroke-width="0.6" />
+          <circle cx="170" cy="170" r="78" stroke="#2C2825" stroke-width="0.6" />
+          <circle cx="170" cy="170" r="70" stroke="#2C2825" stroke-width="0.6" />
+          <circle cx="170" cy="170" r="60" fill="#FAF8F5" />
+          <circle cx="170" cy="170" r="4" fill="#1C1917" />
+          <ellipse cx="125" cy="125" rx="22" ry="11" fill="white" fill-opacity="0.04" transform="rotate(-35 125 125)" />
+        </svg>
+        <div class="vinyl-label-overlay">
+          <span class="side">Side A</span>
+          <span class="title">私の<br>コレクション</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat-item">
+      <div class="stat-number" id="stat-records">–</div>
+      <div class="stat-label">Records</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" id="stat-genres">–</div>
+      <div class="stat-label">Genres</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">15</div>
+      <div class="stat-label">Years Collecting</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">12</div>
+      <div class="stat-label">Countries</div>
+    </div>
+  </div>
+
+  <!-- CATALOG -->
+  <section class="section" id="catalog" style="padding-top: 0;">
+    <div class="section-header">
+      <h2 class="section-title">Catalog</h2>
+    </div>
+    <div class="catalog-grid" id="catalog-grid"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about" style="border-top: 1px solid var(--border);">
+    <div class="about-cards">
+      <div class="about-card">
+        <p class="hero-eyebrow">TurnTable</p>
+        <p class="about-card-value">・Technics SL-1200GR2-K</p>
+        <p class="about-card-value">・Audio Technica AT-LH13H</p>
+        <p class="about-card-value">・audio-technica AT-VM95SH</p>
+      </div>
+      <div class="about-card">
+        <p class="hero-eyebrow">Equipment</p>
+        <p class="about-card-value">・ZEN DAC Signature</p>
+        <p class="about-card-value">・SHURE SRH1540</p>
+        <p class="about-card-value">・iFi Audio micro iPhono3 BL</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-brand">Record Collection</span>
+    <span class="footer-note">© 2026 · Made with love for analog music</span>
+  </footer>
+
+  <script src="records.js"></script>
+  <script>
+    function resolveImageUrl(image) {
+      if (!image) return null;
+      if (!image.startsWith('http')) return `images/${image}`;
+      // Google Drive open?id= 形式
+      const openMatch = image.match(/[?&]id=([^&]+)/);
+      if (openMatch) return `https://drive.google.com/uc?export=view&id=${openMatch[1]}`;
+      // Google Drive /file/d/ID/ 形式
+      const fileMatch = image.match(/\/file\/d\/([^/?]+)/);
+      if (fileMatch) return `https://drive.google.com/uc?export=view&id=${fileMatch[1]}`;
+      return image;
+    }
+
+    function coverStyle(rec) {
+      const src = resolveImageUrl(rec.image);
+      if (src) {
+        return `background-image:url('${src}');background-size:cover;background-position:center;background-color:#3d3631`;
+      }
+      return `background:${GENRE_COLORS[rec.genre] || DEFAULT_COLOR}`;
+    }
+
+    function renderFeatured() {
+      const picks = RECORDS.filter(r => r.featured).slice(0, 3);
+      const grid = document.getElementById('featured-grid');
+      if (!picks.length) { grid.closest('section').style.display = 'none'; return; }
+      grid.innerHTML = picks.map((r, i) => `
+        <div class="featured-card${i === 0 ? ' large' : ''}">
+          <div class="card-cover" style="${coverStyle(r)}"></div>
+          <p class="card-genre">${r.genre}</p>
+          <h3 class="card-artist">${r.artist}</h3>
+          <p class="card-album">${r.album}</p>
+          <span class="card-year">${r.year}${r.label ? ' · ' + r.label : ''}</span>
+        </div>
+      `).join('');
+    }
+
+    function renderCatalog() {
+      const grid = document.getElementById('catalog-grid');
+      grid.innerHTML = RECORDS.map(r => `
+        <div class="catalog-item">
+          <div class="catalog-cover" style="${coverStyle(r)}"></div>
+          <p class="catalog-artist">${r.artist}</p>
+          <p class="catalog-album">${r.album}</p>
+          <div class="catalog-meta">
+            <span class="tag-genre">${r.genre}</span>
+            <span class="tag-year">${r.year}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function updateStats() {
+      const genreCount = new Set(RECORDS.map(r => r.genre)).size;
+      document.getElementById('stat-records').textContent = RECORDS.length;
+      document.getElementById('stat-genres').textContent = genreCount;
+    }
+
+    function showError(msg) {
+      document.getElementById('catalog-grid').innerHTML =
+        `<p style="color:#ef4444;font-family:var(--font-mono);font-size:13px;padding:24px 0;">${msg}</p>`;
+    }
+
+    initRecords()
+      .then(() => {
+        renderFeatured();
+        renderCatalog();
+        updateStats();
+      })
+      .catch(err => {
+        console.error(err);
+        showError(err.message);
+      });
+  </script>
+
+</body>
+
+</html>
