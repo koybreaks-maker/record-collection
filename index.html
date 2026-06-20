@@ -128,8 +128,9 @@
       if (!image) return null;
       if (!image.startsWith('http')) return `images/${image}`;
       // Google Drive open?id= 形式
-      const openMatch = image.match(/[?&]id=([^&]+)/);
-      if (openMatch) return `https://drive.google.com/uc?export=view&id=${openMatch[1]}`;
+      const fileMatch = image.match(/\/file\/d\/([^/?]+)/);
+      if (fileMatch) return `https://drive.google.com/thumbnail?id=${fileMatch[1]}&sz=w800`;
+      return image;
       // Google Drive /file/d/ID/ 形式
       const fileMatch = image.match(/\/file\/d\/([^/?]+)/);
       if (fileMatch) return `https://drive.google.com/uc?export=view&id=${fileMatch[1]}`;
