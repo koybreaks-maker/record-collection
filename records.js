@@ -58,7 +58,7 @@ function parseCSV(csv) {
       year:     get('年'),
       label:    get('レーベル'),
       image:    get('画像ファイル名'),
-      featured: get('おすすめ').toLowerCase() === 'true',
+      format:   get('format'),
     };
   }).filter(r => r.artist);
 }
