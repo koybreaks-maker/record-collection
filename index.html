@@ -170,6 +170,7 @@
           <div class="catalog-meta">
             <span class="tag-genre">${r.genre}</span>
             <span class="tag-year">${r.year}</span>
+            ${r.format ? `<span class="tag-format">${r.format}</span>` : ''}
           </div>
         </div>
       `).join('');
