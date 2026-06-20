@@ -377,6 +377,15 @@ nav {
   color: var(--text-sub);
 }
 
+  .tag-format {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--cream);
+    background: rgba(255,255,255,0.08);
+    padding: 2px 6px;
+    border-radius: 2px;
+  }
+
 /* ── ABOUT ── */
 .about-grid {
   display: grid;
