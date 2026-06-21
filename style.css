@@ -348,10 +348,17 @@ nav {
 
 .catalog-album {
   font-family: 'Crimson Pro', serif;
-  font-size: 12px;
+  font-size: 15px;
   font-style: italic;
   color: var(--text-sub);
-  margin-bottom: 10px;
+  margin-bottom: 4px;
+}
+
+.catalog-year-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--text-sub);
+  margin-bottom: 8px;
 }
 
 .catalog-meta {
