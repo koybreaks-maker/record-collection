@@ -20,11 +20,11 @@
     <ul class="nav-links">
       <li><a href="#featured">*****</a></li>
       <li><a href="#catalog">Catalog</a></li>
-      <li><a href="#about">Vinyl Listening Setup</a></li>
+      <li><a href="#about">Listening Setup</a></li>
     </ul>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO --
   <section class="hero">
     <div class="hero-text">
       <p class="hero-eyebrow">Personal Archive · Since 2010</p>
@@ -127,12 +127,10 @@
     function resolveImageUrl(image) {
       if (!image) return null;
       if (!image.startsWith('http')) return `images/${image}`;
-      // Google Drive open?id= 形式
-      const openMatch = image.match(/[?&]id=([^&]+)/);
-      if (openMatch) return `https://drive.google.com/uc?export=view&id=${openMatch[1]}`;
-      // Google Drive /file/d/ID/ 形式
+      // Google Drive /file/d/ID/ 形式のみ thumbnail に変換
       const fileMatch = image.match(/\/file\/d\/([^/?]+)/);
-      if (fileMatch) return `https://drive.google.com/uc?export=view&id=${fileMatch[1]}`;
+      if (fileMatch) return `https://drive.google.com/thumbnail?id=${fileMatch[1]}&sz=w800`;
+      // それ以外のURLはそのまま使用
       return image;
     }
 
@@ -167,9 +165,9 @@
           <div class="catalog-cover" style="${coverStyle(r)}"></div>
           <p class="catalog-artist">${r.artist}</p>
           <p class="catalog-album">${r.album}</p>
+          <p class="catalog-year-label">${r.year}${r.label ? ' · ' + r.label : ''}</p>
           <div class="catalog-meta">
             <span class="tag-genre">${r.genre}</span>
-            <span class="tag-year">${r.year}</span>
             ${r.format ? `<span class="tag-format">${r.format}</span>` : ''}
           </div>
         </div>
